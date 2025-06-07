@@ -35,7 +35,7 @@ const CheckEmailPage = () => {
     // const URL= "http://localhost:8080/api/register"
     const URL= `${process.env.REACT_APP_BACKEND_URL}/api/email`
     try {
-      const response= await axios.post(URL, data)
+      const response= await axios.post(URL, data, {withCredentials: true})
       toast.success(response.data.message)
       if(response.data.success){
         setData({
