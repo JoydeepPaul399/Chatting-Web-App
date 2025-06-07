@@ -25,12 +25,14 @@ const Home = () => {
   const fetchUserDetails= async ()=>{
     try {
       const url= `${process.env.REACT_APP_BACKEND_URL}/api/user-details`
-      const response= await axios({
-        method: "GET",
-        url: url,
-        withCredentials: true
-      })
+      // const response= await axios({
+      //   method: "GET",
+      //   url: url,
+      //   withCredentials: true
+      // })
 
+      const response = await axios.get(url, { withCredentials: true });
+      // console.log()
       dispatch(setUser({...response.data.data}))
       
 
