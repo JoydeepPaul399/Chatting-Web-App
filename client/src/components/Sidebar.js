@@ -26,6 +26,7 @@ const Sidebar = () => {
   const dispatch= useDispatch()
   const navigate= useNavigate()
 
+
   useEffect(() => {
     if (socketConnection) {
       socketConnection.emit("sidebar", user?._id);
@@ -71,11 +72,6 @@ const Sidebar = () => {
     }
   }
   
-    useEffect(() => {
-      if (!user._id) {
-        navigate("/email");
-      }
-    }, [user]);
 
 
   return (
