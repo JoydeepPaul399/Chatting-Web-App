@@ -201,7 +201,7 @@ const MessagePage = () => {
     <div className='relative bg-no-repeat bg-cover' style={{backgroundImage: `url(${backgroundImage})`}} >
       <header className='sticky top-0 h-16 bg-white px-5 flex items-center justify-between '>
         <div className='flex items-center gap-4'>
-          <Link to={"/"} className='lg:hidden'>
+          <Link to={"/"}>
             <IoArrowBack size={20} />
           </Link>
           <div>
@@ -235,7 +235,7 @@ const MessagePage = () => {
           {
             allMessages?.map((message, index)=>{
               return (
-                <div ref={currentMessage} key={index} className={`bg-white mx-2 my-2 p-1  w-fit max-w-[200px] md:max-w-sm lg:max-w-[350px] rounded ${user._id === message?.msgByUserId ? "ml-auto bg-teal-300" : "bg-white"}`}>
+                <div ref={currentMessage} key={index} className={`bg-white mx-2 my-2 p-1  w-fit max-w-[200px] md:max-w-sm lg:max-w-[350px] rounded ${user._id === message?.msgByUserId ? "ml-auto bg-teal-500" : "bg-white"}`}>
                   <div className=''>
                     {message.imageUrl && (
                       <img src={message.imageUrl} alt="Uploaded Image" className=' w-full h-full object-scale-down ' />)

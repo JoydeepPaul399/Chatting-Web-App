@@ -61,7 +61,7 @@ const SearchUser = ({onClose}) => {
     // }
 
   return (
-    <div  className='fixed top-0 right-0 left-0 bottom-0 bg-slate-700 bg-opacity-40 p-2 '>
+    <div  className='fixed z-50 top-0 right-0 left-0 bottom-0 bg-slate-700 bg-opacity-40 p-2 '>
       <div className='w-full max-w-md mx-auto mt-10'>
         {/* input search  */}
         <div className='bg-white rounded h-14 overflow-hidden flex '>
