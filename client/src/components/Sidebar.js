@@ -13,6 +13,7 @@ import { FaImage } from "react-icons/fa6";
 import { GoVideo } from "react-icons/go";
 import { logout } from '../redux/userSlice';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 
 
@@ -61,7 +62,8 @@ const Sidebar = () => {
       
       let response= await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/logout`, {}, {withCredentials: true})
       if(response.data.success){
-        alert(response.data.message)
+        // alert(response.data.message)
+        toast.success(response?.data?.message)
         dispatch(logout())
         localStorage.clear()
         navigate("/email")
