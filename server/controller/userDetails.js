@@ -7,7 +7,7 @@ async function userDetails(req, res){
         const user= await getUserDetailsFromToken(token)
 
         if(user.logout){
-            return res.status(400).json({
+            return res.status(401).json({
                 message: user.message,
                 error: true,
                 success: false
