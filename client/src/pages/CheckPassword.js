@@ -33,11 +33,6 @@ const CheckPassword = () => {
     })
   }
 
-
-
-  
-  
-
   const handleSubmit= async (e)=>{
     e.stopPropagation()
     e.preventDefault()

@@ -6,6 +6,8 @@ const UserModel = require('../models/UserModel')
 const { conversationModel, messageModel } = require('../models/ConversationModel')
 const getConversation = require('../helpers/getConversation')
 const app= express()
+const mongoose = require("mongoose");
+
 // socket io needs the raw server to work which is built with http 
 // socket connections 
 const server= http.createServer(app)
@@ -41,6 +43,10 @@ io.on('connection', async (socket)=>{
     // This is for the message page, sending data from frontend messagepage useEffect 
     socket.on('message-page', async (userId)=>{
         // console.log("User id is ", userId)
+        if (!mongoose.Types.ObjectId.isValid(userId)) {
+            console.log("Invalid user ID:", userId);
+            return socket.emit("forceLogout", { message: "Invalid user session" });
+        }
         const userDetails= await UserModel.findById(userId).select("-password")
 
         const payload= {

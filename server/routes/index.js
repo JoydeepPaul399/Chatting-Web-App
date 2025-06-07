@@ -18,7 +18,7 @@ router.post('/password', checkPassword)
 // Login user details
 router.get("/user-details", userDetails)
 // Logout api
-router.get("/logout", logout)
+router.post("/logout", logout)
 // Update user details
 router.post("/update-user", updateUserDetails)
 // search user 
