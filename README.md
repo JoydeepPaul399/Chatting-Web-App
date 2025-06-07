@@ -1,4 +1,5 @@
 # Chatting Web App
+<a href="https://chatting-web-app-9eyz.vercel.app/" target="_blank"> Live Demo </a> 
 
 This is a real-time Chatting Web Application made with the MERN stack and Socket.io.  
 Users can sign up, log in, and chat live with others instantly.
