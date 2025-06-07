@@ -75,7 +75,7 @@ const Sidebar = () => {
       if (!user._id) {
         navigate("/email");
       }
-    }, [user, navigate]);
+    }, [user]);
 
 
   return (
